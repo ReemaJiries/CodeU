@@ -1,3 +1,4 @@
+from Node import Node
 class linked_list:
     def __init__(self, data = 0):
         if type(data) is list:
