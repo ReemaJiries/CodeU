@@ -1,4 +1,6 @@
-# CodeUI am Computer Engineering student at the Hebrew University third year as part of CodeU program at Google for students we should submit this assignment
+# First-Assignment
+
+I am Computer Engineering student at the Hebrew University third year as part of CodeU program at Google for students we should submit this assignment
 
 Q1: is_permutation.py: contains a function is_permutation(str1 = "", str2 = "") input: two strings output: if one is a permutation of the other
 
