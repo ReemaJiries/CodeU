@@ -39,10 +39,9 @@ class linked_list:
         k_last_elements = []
         temp = self._head
         i = 1
-        while temp.getNext() is not None:
+        while temp is not None:
             if i >= k:
                 k_last_elements.append(temp.getData())
             temp = temp.getNext()
             i += 1
-        k_last_elements.append(temp.getData())
         return k_last_elements
