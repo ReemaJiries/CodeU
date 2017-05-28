@@ -59,7 +59,9 @@ if __name__ == '__main__':
     print("Done")
     print("Testing invalid inputs")
     #Testing invalid inputs
+    #-1 dosen't exist in the tree
     assert a.getAncestors(-1) == []
+    # one of the given keys isn't exist in the BT
     assert a.commonAncestor(1000, 9) == []
     print("Done")
 
