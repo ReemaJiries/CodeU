@@ -1,5 +1,4 @@
 from Binary_Tree import Binary_Tree
-
 if __name__ == '__main__':
     #Testing valid inputs
     print("Testing valid inputs")
@@ -34,9 +33,26 @@ if __name__ == '__main__':
     assert bt.getAncestors(8) == [2,3,5]
     #checking right and left nodes
     assert bt.commonAncestor(10,8) == 5
-    print("Done")
+    #cheking adding binary tree as child
+    print("Done\n")
     
-    print("sting long lenght of linked list")
+    print("Testing after adding binary tree")
+    child_bt = Binary_Tree(19)
+    child_bt.add(20,19)
+    child_bt.add(21,20,False)
+    assert bt.add(child_bt,1) == True
+    assert bt.getAncestors(1) == [3,5]
+    assert bt.getAncestors(21) == [20, 19, 1, 3, 5]
+    assert bt.commonAncestor(19,3) == 5
+    print("Done\n")
+
+    print("Testing testing adding negative keys")
+    assert bt.add(-1,20) == True
+    assert bt.getAncestors(-1) == [20, 19, 1, 3, 5]
+    assert bt.commonAncestor(-1,7) == 5
+    print("Done\n")
+    
+    print("Testing long lenght of binary tree")
     a = Binary_Tree()
     a.add(1001)
     excepted = []
@@ -56,14 +72,15 @@ if __name__ == '__main__':
     assert a.commonAncestor(1001,3) == 1001
     assert a.commonAncestor(499,50) == 49
     assert a.commonAncestor(499,0) == 1001  
-    print("Done")
+    print("Done\n")
+    
     print("Testing invalid inputs")
     #Testing invalid inputs
     #-1 dosen't exist in the tree
     assert a.getAncestors(-1) == []
     # one of the given keys isn't exist in the BT
     assert a.commonAncestor(1000, 9) == []
-    print("Done")
+    print("Done\n")
 
     print("All tests have been passed")
 
