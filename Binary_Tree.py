@@ -1,10 +1,11 @@
 from Node import Node
 
-"""
-the Binary Tree consist of Nodes with no duplicates keys and root node.
-onstructor: accepts key of the root Node
-"""
+
 class Binary_Tree():
+    """
+    the Binary Tree consist of Nodes with no duplicates keys and root node.
+    constructor: accepts key of the root Node
+    """
     def __init__(self, root_key = 0):
         if root_key == 0:
             self._root = None
@@ -12,17 +13,17 @@ class Binary_Tree():
         else:
             self._root = Node(root_key)
             self._size = 1
-    """
-    returns the root node of binary tree
-    """
+
     def get_root(self):
+        """returns the root node of binary tree"""
         return self._root
 
-    """
-    Input:integer key in the array and optional start search node (the default is root Node)
-    Output:the node with the given key
-    """
+    
     def search(self,key, search_node = None):
+        """
+        Input:integer key in the array and optional start search node (the default is root Node)
+        Output:the node with the given key
+        """
         if search_node is None:
             search_node = self._root
         if search_node.getData() == key:
@@ -33,12 +34,13 @@ class Binary_Tree():
             return self.search(key, search_node.getRightChild())
         if search_node.getLeftChild():
             return self.search(key, search_node.getLeftChild())
-    """
-    Input: key of Integer type or Binary Tree, parent node key, boolean is_right
-    is right child or left.
-    Output: True or False.
-    """
+
     def add(self,key, parent_key = None, is_right = True):
+        """
+        Input: key of Integer type or Binary Tree, parent node key, boolean is_right
+        is right child or left.
+        Output: True or False.
+        """
         if self._size == 0:
             self._root = Node(key)
         else:
@@ -73,13 +75,14 @@ class Binary_Tree():
         self._size += 1
         return True
     
-    """
-    Given a Binary Tree and a key, prints all the ancestors of the key in
-    the given binary tree.
-    Input: key of type Integer
-    Output: list of all the ancestors of the key in the given binary tree
-    """
+    
     def getAncestors(self, key):
+        """
+        Given a Binary Tree and a key, prints all the ancestors of the key in
+        the given binary tree.
+        Input: key of type Integer
+        Output: list of all the ancestors of the key in the given binary tree
+        """
         key_node = self.search(key)
         ancestors = []
         if key_node is None:
@@ -93,11 +96,12 @@ class Binary_Tree():
         print(ancestors)
         return ancestors
     
-    """
-    Input: 2 Keys of type Integer
-    Output: return he lowest common ancestor of two nodes in a binary tree
-    """
+    
     def commonAncestor(self, key1, key2):
+        """
+        Input: 2 Keys of type Integer
+        Output: return he lowest common ancestor of two nodes in a binary tree
+        """
         if self.search(key1) is None or self.search(key2) is None:
             print("Error: one of the given keys isn't exist in the BT")
             return []
