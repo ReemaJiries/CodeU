@@ -1,4 +1,4 @@
-from Node import Node
+from Node_linkedList import Node
 
 
 class Binary_Tree():
