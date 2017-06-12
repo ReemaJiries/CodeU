@@ -1,10 +1,28 @@
 class Dictionary:
+    """
+    Input: word: string
+    Returns whether the given string is a valid word.
+    """
     def isWord(self, word):
         pass
+    """
+    Input: prefix: string
+    Returns whether the given string is a prefix of at least one word in the dictionary. 
+    """
     def isPrefix(self, prefix):
         pass
 
 def find_words_prefix(charecter,i,j,num_of_rows, num_of_columns, grid, dictionary,isVisit,valid_words ):
+    """
+    helper function filles valid_words according to te given inputs
+    charecter - the charecter in the grid
+    i,j - indexes of the character
+    num_of_rows, num_of_columns: dims of the grid
+    grid: the grid list of 2Dim. of characters
+    dictionary: valid words
+    isVisit1: list of 2 dim of bool type specify if we visit the character and check if exist valid path.
+    valid_words: empty list - for the recursia (the output)
+    """
     #passing over all adjacent cells of the given char
     x = max(0, i-1)
     y = max(0, j-1)
@@ -20,6 +38,13 @@ def find_words_prefix(charecter,i,j,num_of_rows, num_of_columns, grid, dictionar
                 find_words_prefix(w,x,y,num_of_rows, num_of_columns, grid, dictionary, isVisit,valid_words)
  
 def word_search(num_of_rows = 0, num_of_columns = 0, grid = [], dictionary = {}):
+    """
+    Input:
+    num_of_rows , num_of_columns: the number of rows, number of columns.
+    grid:a 2-dimensional array of characters (of the native char data type)
+    and the dictionary
+    output: valid words
+    """
     valid_words = set()
     isVisit = []
 
