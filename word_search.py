@@ -42,8 +42,7 @@ def word_search(num_of_rows = 0, num_of_columns = 0, grid = [], dictionary = {})
     """
     Input:
     num_of_rows , num_of_columns: the number of rows, number of columns.
-    grid:a 2-dimensional array of characters (of the native char data type)
-    and the dictionary
+    grid:a 2-dimensional array of characters (of the native char data type) and the dictionary
     output: valid words
     """
     valid_words = set()
@@ -140,8 +139,6 @@ if __name__ == '__main__':
     l = word_search(10,3,[['A',5,'R'],['T','C','D']],d)
     assert l == {}
     print("Done\n")
-
-    #Testing large input
-
+    
     print("All tests have been passed")
 
