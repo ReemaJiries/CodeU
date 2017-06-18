@@ -1,20 +1,21 @@
 class Dictionary:
-    """
-    Input: word: string
-    Returns whether the given string is a valid word.
-    """
     def isWord(self, word):
+        """
+        Input: word: string
+        Returns whether the given string is a valid word.
+        """
         pass
-    """
-    Input: prefix: string
-    Returns whether the given string is a prefix of at least one word in the dictionary. 
-    """
+
     def isPrefix(self, prefix):
+        """
+        Input: prefix: string
+        Returns whether the given string is a prefix of at least one word in the dictionary. 
+        """
         pass
 
 def find_words_prefix(charecter,i,j,num_of_rows, num_of_columns, grid, dictionary,isVisit,valid_words ):
     """
-    helper function filles valid_words according to te given inputs
+    helper function filles valid_words according to the given inputs
     charecter - the charecter in the grid
     i,j - indexes of the character
     num_of_rows, num_of_columns: dims of the grid
