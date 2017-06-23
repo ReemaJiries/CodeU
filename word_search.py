@@ -25,14 +25,13 @@ def find_words_prefix(charecter,i,j,num_of_rows, num_of_columns, grid, dictionar
     valid_words: empty list - for the recursia (the output)
     """
     #passing over all adjacent cells of the given char
-    x = max(0, i-1)
     y = max(0, j-1)
-    if(dictionary.isWord(charecter)):
+    if dictionary.isWord(charecter):
         valid_words.add(charecter)
     for x in range(max(0, i-1), min(i+2, num_of_rows)):
         for y in range(max(0, j-1), min(j+2, num_of_columns)):
             w = charecter + grid[x][y]
-            if((x != i or y != j) and (isVisit[x][y] == False) and (dictionary.isPrefix(w))):
+            if (not isVisit[x][y]) and (dictionary.isPrefix(w)):
                 isVisit[x][y] = True
                 if(dictionary.isWord(w)):
                     valid_words.add(w)
@@ -60,7 +59,7 @@ def word_search(num_of_rows = 0, num_of_columns = 0, grid = [], dictionary = {})
     if num_of_rows <= 0 or num_of_columns <= 0:
         print("Input Error: Invalid number of rows or columuns, it must be positive integers")
         return {}
-    if (len(grid) < num_of_rows):
+    if len(grid) < num_of_rows:
         print("Error: num of rows is large")
         return {}
     for r in range(num_of_rows):
@@ -70,7 +69,7 @@ def word_search(num_of_rows = 0, num_of_columns = 0, grid = [], dictionary = {})
         isVisit.append(row)
     #passing over all possibale starting position at the grid
     for i in range(num_of_rows):
-        if (len(grid[i]) < num_of_columns):
+        if len(grid[i]) < num_of_columns:
             print("Error: num of cols is large")
             return {}
         for j in range(num_of_columns):
@@ -82,31 +81,29 @@ def word_search(num_of_rows = 0, num_of_columns = 0, grid = [], dictionary = {})
                 print("Error: element not alpha type in the grid")
                 return {}
 
-            if (dictionary.isPrefix(charecter)):
+            if dictionary.isPrefix(charecter):
                 find_words_prefix(charecter,i,j,num_of_rows, num_of_columns, grid, dictionary, isVisit,valid_words)
                 for r in range(num_of_rows):
                     for col in range(num_of_columns):
                         isVisit[r][col] = False
     return valid_words
+
+class Dictionary:
+    def __init__(self, words_set,prefix_set):
+        self._words_set = words_set
+        self._prefix_set = prefix_set
+        
+    def isWord(self, word):
+        return word in self._words_set
+
+    def isPrefix(self, prefix):
+        return prefix in self._prefix_set
+        
+        
 if __name__ == '__main__':
     #Testing valid inputs
     print("Testing valid inputs:")
     print("Testing simple valid input")
-    class Dictionary:
-        def __init__(self, pa,da):
-            self.k = pa
-            self.p = da
-        def isWord(self, word):
-            for i in range(len(self.k)):
-                if self.k[i] == word:
-                    return True
-            return False
-
-        def isPrefix(self, prefix):
-            for i in range(len(self.p)):
-                if self.p[i] == prefix:
-                    return True
-            return False
     #tet1
     s = ["CAR", "CARD", "CART", "CAT"]
     p = ["C", "CA", "CAR", "CARD", "CART", "CAT"]
