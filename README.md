@@ -45,11 +45,11 @@ given a 2-dimensional map of tiles. Each tile is either land or water. You have 
 Two tiles belong to the same island if they are both land and are adjacent horizontally or vertically, but not diagonally. 
  
 The input to your function is the number of rows, number of columns, and a 2-dimensional array of booleans, where false means water and true means land. The function should simply return the number of islands. 
-counting_islands.py contsins:
+counting_islands.py contains:
 find_is_island         ... helper function that valid island according to the given conditions.
 check_inputs           ... the function that counts the number of islands.
 find_number_of_islands ... the function that counts the number of islands.
 main                   ...  testing find_number_of_islands function.
 
-I iterat over the every possibale start tile in the island, and visit an valid path recursive (island).
+I iterate over the every possibale start tile in the island, and visit an valid path recursive (island).
 
