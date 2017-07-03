@@ -1,7 +1,7 @@
-valid_isands = 0
+valid_islands = 0
 num_of_rows = 0
 num_of_columns = 0
-realLenght = 0
+realLength = 0
 
 
 def find_is_island(i,j, map_of_tiles, isVisit, is_start):
@@ -12,7 +12,7 @@ def find_is_island(i,j, map_of_tiles, isVisit, is_start):
     isVisit: list of 2 dim of bool type specify if we visit the tile and check if exist valid path.
     """
     #passing over all adjacent cells of the given char
-    global valid_isands
+    global valid_islands
     adjacents = [(max(0, i-1), j), (min(i+1, num_of_rows-1),j),(i, max(0, j-1)), (i, min(j+1, num_of_columns-1))]
     for adjecent in adjacents:
         x = adjecent[0]
@@ -22,7 +22,7 @@ def find_is_island(i,j, map_of_tiles, isVisit, is_start):
             if map_of_tiles[x][y]:
                 find_is_island(x,y, map_of_tiles, isVisit, False)
     if is_start:
-        valid_isands += 1
+        valid_islands += 1
 
 
 def check_inputs():
@@ -41,7 +41,7 @@ def check_inputs():
     if num_of_rows <= 0 or num_of_columns <= 0:
         print("Input Error: Invalid number of rows or columuns, it must be positive integers")
         return False
-    if realLenght < num_of_rows:
+    if realLength < num_of_rows:
         print("Error: num of rows is large")
         return False
     return True
@@ -53,12 +53,12 @@ def find_number_of_islands(num_of_row = 0, num_of_column = 0, map_of_tiles = [])
     map_of_tiles:a 2-dimensional array of map of tiles. Each tile is either land(True) or water(False)
     output: number of islands
     """
-    global valid_isands
+    global valid_islands
     global num_of_rows
     global num_of_columns
-    global realLenght
-    realLenght = len(map_of_tiles)
-    valid_isands = 0
+    global realLength
+    realLength = len(map_of_tiles)
+    valid_islands = 0
     num_of_rows = num_of_row
     num_of_columns = num_of_column
     isVisit = []
@@ -87,7 +87,9 @@ def find_number_of_islands(num_of_row = 0, num_of_column = 0, map_of_tiles = [])
             j += 1
         i += 1
         j = 0
-    num_of_islands = valid_isands
+    num_of_islands = valid_islands
+    
+    
     return num_of_islands
 
         
