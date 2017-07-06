@@ -38,7 +38,7 @@ valid_words: empty list - for the recursia (the output)
  
  main:
  tests of valid and invalid inputs.
-=======
+
 # CodeU Assignment - 2
 Node:
 For every node there is data, parent node, leftChild Node and rightChild Node.
