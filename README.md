@@ -7,7 +7,7 @@ Q2: I made Node class : the consturactor accepts data to initialize the data, th
 
 linked_list class: I built singly linked list: Singly Linked Lists are a type of data structure. It is a type of list. In a singly linked list each node in the list stores the contents of the node and a pointer or reference to the next node in the list. It does not store any pointer or reference to the previous node. (from wikibooks) constructor: accepts one integer or list of integers or default 0: the linked list consist of the head node according to the data that given in the constructor. add_Node: accepts data of integer type, no default value. adding new node with the given data to the list. changeNode: accepts index if the node to be changed, starting from 1, and data of integer type, no default value. change the data of the node with the given index. getData: k - index of the k element in the linked list starting from 1. find the kth to last element of a singly linked list. output: list of the kth to last element of a singly linked list.
 
-#Third-Assignment
+# Third-Assignment
 Given a grid of letters and a dictionary, find all the words from the dictionary that can be formed in the grid. 
  
 The rules for forming a word:
@@ -38,3 +38,18 @@ valid_words: empty list - for the recursia (the output)
  
  main:
  tests of valid and invalid inputs.
+ 
+# Fourth-Assignment
+given a 2-dimensional map of tiles. Each tile is either land or water. You have to write a function that counts the number of islands. 
+ 
+Two tiles belong to the same island if they are both land and are adjacent horizontally or vertically, but not diagonally. 
+ 
+The input to your function is the number of rows, number of columns, and a 2-dimensional array of booleans, where false means water and true means land. The function should simply return the number of islands. 
+counting_islands.py contains:
+find_is_island         ... helper function that valid island according to the given conditions.
+check_inputs           ... the function that counts the number of islands.
+find_number_of_islands ... the function that counts the number of islands.
+main                   ...  testing find_number_of_islands function.
+
+I iterate over the every possibale start tile in the island, and visit an valid path recursive (island).
+
