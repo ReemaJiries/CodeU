@@ -15,6 +15,9 @@ class Graph:
         self.vertices = OrderedDict()
 
     def add_Edge(self, v, u):
+        """
+        given v->u edge, adding all adjacents vertices u to v list of adj.
+        """
         if v not in self.vertices.keys():    
             self.add_vertex(v)
         if u not in self.vertices.get(v)[1]:
@@ -74,7 +77,7 @@ def findAllTogiticalPaths(dictionary):
             return
         prev_word = dictionary[word_index-1]
         find_Adj_succ = False
-        # try to get an edje between to characters in alphabet_graph from two adj words in the dict
+        # try to get an edge between to characters in alphabet_graph from two adj words in the dict
         for v in range(len(word)):
             alphabet_graph.add_vertex(word[v])
             if not find_Adj_succ and len(word) <= len(prev_word):
