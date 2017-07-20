@@ -20,7 +20,7 @@ def rearranging_cars(old_parking, new_parking):
         empty_park_position = map_slot_cars[0]
         new_park = new_parking[new_slot_position]
         old_park_position = map_slot_cars[new_park]        
-        if new_slot_position != old_park_position:
+        if new_slot_position != old_park_position and new_parking[new_slot_position] != 0:
             #checking if there is a need for an extra move of the wanted park in case it is full
             if new_slot_position != empty_park_position:
                 old_parking[empty_park_position] = old_parking[new_slot_position]
@@ -49,4 +49,5 @@ if __name__ == '__main__':
     """
     steps_result = rearranging_cars([1,2,0,3],[3,1,2,0])
     assert steps_result == [(0, 2), (3, 0), (1, 3), (2, 1), (3, 2)]
-
+    steps_corner_test = rearranging_cars([3, 1, 2, 0], [0, 1, 2, 3])
+    assert steps_corner_test == [(0,3)]
