@@ -34,7 +34,7 @@ class Graph:
 
     def recTopologicalSort(self, v, allPaths):
         """
-        recurcive method to find the topological oreder of characters of the given language
+        recursive method to find the topological order of characters of the given language
         """       
         self.vertices.get(v)[0] = True
         adj = self.vertices.get(v)[1]
@@ -46,7 +46,7 @@ class Graph:
         
     def topologicalSort(self):
         """
-        find the topological oreder of characters 
+        find the topological order of characters 
         """
         allPaths = []
         [self.recTopologicalSort(v,allPaths) for v in self.vertices if not self.vertices.get(v)[0]]
