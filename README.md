@@ -69,3 +69,31 @@ I built it as an attribute of the Binary Tree commonAncestor(key1,key2):
 Input: 2 Keys of type Integer
 Output: the lowest common ancestor of two nodes in a binary tree
 
+# CodeU Assignment - 5 
+unknown language is our 5 assignment. 
+Given a dictionary (a list of words in lexicographic order) of all words in an unknown/invented language, find the alphabet (an ordered list of characters) of that language.
+
+This language can contain any character (of the native char data type). Upper/lower case characters are treated differently for simplicity. Assume standard lexicographical ordering (order by characters from left to right, if X is a prefix of Y then X is sorted before Y), just with an unknown order of characters.
+
+Write a function that will receive an ordered list of strings, and returns an ordered list of characters.
+
+Example input: [ART, RAT, CAT, CAR]. Solution: [A, T, R, C].
+
+I have created Graph class:
+Constructor: The Graph consists of ordered Vertices such as
+        every slot in vertices will contain keys: alphabet and values: tree tuple type
+        (isvisit,list of adj, degree)
+        isvisit - mark the vertex as visited or no.
+        list of adj - all vertices the consist edges in the graph such as v --> u
+                    v character before u character at the language.
+        degree - the number of characters before v.            
+        
+Add_Edge: given v->u edge, adding all adjacents vertices u to v list of adj.
+add_vertex: add new valid vertex (character)
+recTopologicalSort: recursive method to find the topological order of characters of the given language
+topologicalSort: find the topological order of characters 
+findAllTogiticalPaths: The main function that converts the problem of the dictionary to graph of vertices that represent
+    the characters of the language and the edges are v --> u
+    v character before u character at the language.
+    after that finding the specific order using the topological order algorithm.
+main; testing findAllTogiticalPaths.
